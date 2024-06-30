@@ -1,0 +1,24 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1vwiiwl4exuo"]
+
+[ext_resource type="Script" path="res://foliage.gd" id="1_c0a11"]
+[ext_resource type="Texture2D" uid="uid://xvj47hrk78ot" path="res://at_grass/grass_testures/PNG/Flat/sprite_0006.png" id="1_mrmp2"]
+[ext_resource type="Script" path="res://grass.gd" id="2_ev4br"]
+[ext_resource type="Shader" path="res://grass.gdshader" id="2_jl3cf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m8q5l"]
+shader = ExtResource("2_jl3cf")
+shader_parameter/grass_size = 32
+
+[sub_resource type="QuadMesh" id="QuadMesh_pieoo"]
+
+[sub_resource type="MultiMesh" id="MultiMesh_t0vfl"]
+mesh = SubResource("QuadMesh_pieoo")
+
+[node name="Foliage" type="Node2D"]
+script = ExtResource("1_c0a11")
+
+[node name="Grass" type="MultiMeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_m8q5l")
+multimesh = SubResource("MultiMesh_t0vfl")
+texture = ExtResource("1_mrmp2")
+script = ExtResource("2_ev4br")

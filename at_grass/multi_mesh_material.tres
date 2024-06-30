@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dou27igxo56x4"]
+
+[ext_resource type="Shader" path="res://multi_mesh.gdshader" id="1_ihskp"]
+[ext_resource type="Texture2D" uid="uid://caf6hl8t1pdf1" path="res://wind_map.tres" id="2_w7vu7"]
+
+[resource]
+shader = ExtResource("1_ihskp")
+shader_parameter/grass_size = 60.0
+shader_parameter/world_size = 1500.0
+shader_parameter/wind_directon = Vector2(0.707, -0.472)
+shader_parameter/wind_speed = 100.0
+shader_parameter/horizontal_strength = 1.0
+shader_parameter/vertical_strength = 0.25
+shader_parameter/grass_gradient = PackedColorArray(0.00784314, 0.368627, 0, 1, 0.603922, 0.705882, 0.152941, 1)
+shader_parameter/color_bend = Color(1, 1, 0, 1)
+shader_parameter/wind_noise_map = ExtResource("2_w7vu7")
