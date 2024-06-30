@@ -7,7 +7,6 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m8q5l"]
 shader = ExtResource("2_jl3cf")
-shader_parameter/grass_size = 32
 
 [sub_resource type="QuadMesh" id="QuadMesh_pieoo"]
 

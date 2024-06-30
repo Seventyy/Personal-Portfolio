@@ -10,15 +10,11 @@ func _ready() -> void:
 	
 	for i in positions.size():
 		var grass_bunch_transform:Transform2D
-		grass_bunch_transform = grass_bunch_transform.translated(
-			positions[i] * tilemap.tile_set.tile_size.x
-		)
+		grass_bunch_transform = grass_bunch_transform \
+			.translated(
+				(Vector2(positions[i]) + Vector2(.5,.5)) *
+				tilemap.tile_set.tile_size.x
+			)\
+			.rotated_local(PI)\
+			.scaled_local(tilemap.tile_set.tile_size)
 		multimesh.set_instance_transform_2d(i, grass_bunch_transform)
-		
-#for i in multimesh.instance_count:
-		#var transform2D = Transform2D()
-		#transform2D = transform2D.translated(Vector2(
-			#rng.randf_range(-box_size/2,box_size/2),
-			#(float(i)/multimesh.instance_count-.5) * box_size
-		#))
-		#multimesh.set_instance_transform_2d(i, transform2D)

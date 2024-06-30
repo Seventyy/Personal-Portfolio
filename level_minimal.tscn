@@ -222,7 +222,7 @@ terrain_set_0/terrain_2/name = "Walls"
 terrain_set_0/terrain_2/color = Color(0.4, 0.168627, 0.0941176, 1)
 sources/2 = SubResource("TileSetAtlasSource_50pdm")
 
-[node name="Level" type="Node2D"]
+[node name="LevelMinimal\'" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_227ss")

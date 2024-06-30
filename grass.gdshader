@@ -1,9 +1,8 @@
 shader_type canvas_item;
 
-uniform int grass_size;
 
 void vertex() {
-	VERTEX *= float(grass_size);
+	//VERTEX *= float(grass_size); 
 }
 
 void fragment() {
