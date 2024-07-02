@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1vwiiwl4exuo"]
+[gd_scene load_steps=11 format=3 uid="uid://d1vwiiwl4exuo"]
 
 [ext_resource type="Script" path="res://foliage.gd" id="1_c0a11"]
 [ext_resource type="Texture2D" uid="uid://xvj47hrk78ot" path="res://at_grass/grass_testures/PNG/Flat/sprite_0006.png" id="1_mrmp2"]
@@ -13,6 +13,12 @@ shader = ExtResource("2_jl3cf")
 [sub_resource type="MultiMesh" id="MultiMesh_t0vfl"]
 mesh = SubResource("QuadMesh_pieoo")
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3srmw"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3e5rk"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mol44"]
+
 [node name="Foliage" type="Node2D"]
 script = ExtResource("1_c0a11")
 
@@ -21,3 +27,24 @@ material = SubResource("ShaderMaterial_m8q5l")
 multimesh = SubResource("MultiMesh_t0vfl")
 texture = ExtResource("1_mrmp2")
 script = ExtResource("2_ev4br")
+hight_noise = SubResource("FastNoiseLite_3srmw")
+width_noise = SubResource("FastNoiseLite_3e5rk")
+position_noise = SubResource("FastNoiseLite_mol44")
+
+[node name="Grass" type="MultiMeshInstance2D" parent="Grass"]
+material = SubResource("ShaderMaterial_m8q5l")
+multimesh = SubResource("MultiMesh_t0vfl")
+texture = ExtResource("1_mrmp2")
+script = ExtResource("2_ev4br")
+hight_noise = SubResource("FastNoiseLite_3srmw")
+width_noise = SubResource("FastNoiseLite_3e5rk")
+position_noise = SubResource("FastNoiseLite_mol44")
+
+[node name="Grass" type="MultiMeshInstance2D" parent="Grass/Grass"]
+material = SubResource("ShaderMaterial_m8q5l")
+multimesh = SubResource("MultiMesh_t0vfl")
+texture = ExtResource("1_mrmp2")
+script = ExtResource("2_ev4br")
+hight_noise = SubResource("FastNoiseLite_3srmw")
+width_noise = SubResource("FastNoiseLite_3e5rk")
+position_noise = SubResource("FastNoiseLite_mol44")
