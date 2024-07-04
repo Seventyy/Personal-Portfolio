@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://q10cdbgwxofb"]
+[gd_scene load_steps=15 format=3 uid="uid://q10cdbgwxofb"]
 
 [ext_resource type="Texture2D" uid="uid://b05cnbo73kcj1" path="res://new_tileset.png" id="1_0trid"]
 [ext_resource type="PackedScene" uid="uid://bmtvhypn3abl1" path="res://captain.tscn" id="2_kdaab"]
-[ext_resource type="PackedScene" uid="uid://cn7w56gqho38i" path="res://camera.tscn" id="3_cbmnc"]
-[ext_resource type="PackedScene" uid="uid://d1vwiiwl4exuo" path="res://foliage.tscn" id="4_3deut"]
+[ext_resource type="Shader" path="res://grass.gdshader" id="4_vl4os"]
+[ext_resource type="Texture2D" uid="uid://xvj47hrk78ot" path="res://at_grass/grass_testures/PNG/Flat/sprite_0006.png" id="5_cwhk8"]
+[ext_resource type="Script" path="res://grass.gd" id="6_7qj3y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50pdm"]
 texture = ExtResource("1_0trid")
@@ -222,7 +223,24 @@ terrain_set_0/terrain_2/name = "Walls"
 terrain_set_0/terrain_2/color = Color(0.4, 0.168627, 0.0941176, 1)
 sources/2 = SubResource("TileSetAtlasSource_50pdm")
 
-[node name="LevelMinimal\'" type="Node2D"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ybo71"]
+viewport_path = NodePath("Grass/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m8q5l"]
+shader = ExtResource("4_vl4os")
+
+[sub_resource type="QuadMesh" id="QuadMesh_pieoo"]
+
+[sub_resource type="MultiMesh" id="MultiMesh_t0vfl"]
+mesh = SubResource("QuadMesh_pieoo")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3srmw"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3e5rk"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mol44"]
+
+[node name="LevelMinimal" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_227ss")
@@ -233,13 +251,31 @@ layer_1/name = "Walls"
 layer_1/tile_data = PackedInt32Array()
 
 [node name="Captain" parent="." instance=ExtResource("2_kdaab")]
-normal_speed = 25.0
-slow_speed = 10.0
-fast_speed = 100.0
+normal_speed = 100.0
+slow_speed = 20.0
+fast_speed = 500.0
 
-[node name="Camera" parent="." node_paths=PackedStringArray("focus") instance=ExtResource("3_cbmnc")]
-zoom = Vector2(3, 3)
-focus = NodePath("../Captain")
+[node name="Camera" type="Camera2D" parent="Captain"]
+zoom = Vector2(6, 6)
 
-[node name="Foliage" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("4_3deut")]
-tilemap = NodePath("../TileMap")
+[node name="Grass" type="Sprite2D" parent="."]
+texture = SubResource("ViewportTexture_ybo71")
+centered = false
+
+[node name="SubViewport" type="SubViewport" parent="Grass"]
+disable_3d = true
+transparent_bg = true
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(200, 200)
+
+[node name="MultiMeshInstance2D" type="MultiMeshInstance2D" parent="Grass/SubViewport" node_paths=PackedStringArray("tilemap")]
+material = SubResource("ShaderMaterial_m8q5l")
+multimesh = SubResource("MultiMesh_t0vfl")
+texture = ExtResource("5_cwhk8")
+script = ExtResource("6_7qj3y")
+tilemap = NodePath("../../../TileMap")
+hight_noise = SubResource("FastNoiseLite_3srmw")
+width_noise = SubResource("FastNoiseLite_3e5rk")
+position_noise = SubResource("FastNoiseLite_mol44")

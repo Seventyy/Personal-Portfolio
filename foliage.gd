@@ -1,3 +1,3 @@
-class_name Foliage extends Node2D
+class_name Foliage extends Node
 
 @export var tilemap:TileMap

@@ -4,4 +4,4 @@
 
 [node name="Main" type="Node"]
 
-[node name="Level2" parent="." instance=ExtResource("1_fjlg3")]
+[node name="LevelMinimal" parent="." instance=ExtResource("1_fjlg3")]

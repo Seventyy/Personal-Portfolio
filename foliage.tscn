@@ -19,28 +19,10 @@ mesh = SubResource("QuadMesh_pieoo")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_mol44"]
 
-[node name="Foliage" type="Node2D"]
+[node name="Foliage" type="SubViewport"]
 script = ExtResource("1_c0a11")
 
 [node name="Grass" type="MultiMeshInstance2D" parent="."]
-material = SubResource("ShaderMaterial_m8q5l")
-multimesh = SubResource("MultiMesh_t0vfl")
-texture = ExtResource("1_mrmp2")
-script = ExtResource("2_ev4br")
-hight_noise = SubResource("FastNoiseLite_3srmw")
-width_noise = SubResource("FastNoiseLite_3e5rk")
-position_noise = SubResource("FastNoiseLite_mol44")
-
-[node name="Grass" type="MultiMeshInstance2D" parent="Grass"]
-material = SubResource("ShaderMaterial_m8q5l")
-multimesh = SubResource("MultiMesh_t0vfl")
-texture = ExtResource("1_mrmp2")
-script = ExtResource("2_ev4br")
-hight_noise = SubResource("FastNoiseLite_3srmw")
-width_noise = SubResource("FastNoiseLite_3e5rk")
-position_noise = SubResource("FastNoiseLite_mol44")
-
-[node name="Grass" type="MultiMeshInstance2D" parent="Grass/Grass"]
 material = SubResource("ShaderMaterial_m8q5l")
 multimesh = SubResource("MultiMesh_t0vfl")
 texture = ExtResource("1_mrmp2")
