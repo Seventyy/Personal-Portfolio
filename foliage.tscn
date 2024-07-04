@@ -7,6 +7,14 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m8q5l"]
 shader = ExtResource("2_jl3cf")
+shader_parameter/grass_size = null
+shader_parameter/world_size = null
+shader_parameter/wind_directon = null
+shader_parameter/wind_speed = null
+shader_parameter/horizontal_strength = null
+shader_parameter/vertical_strength = null
+shader_parameter/grass_gradient = null
+shader_parameter/color_bend = null
 
 [sub_resource type="QuadMesh" id="QuadMesh_pieoo"]
 

@@ -10,6 +10,10 @@ extends MultiMeshInstance2D
 @onready var tile_size:Vector2 = tilemap.tile_set.tile_size 
 
 func _ready() -> void:
+	positions.append(Vector2i(0, 0))
+	positions.append(Vector2i(1, 0))
+	positions.append(Vector2i(0, 1))
+	positions.append(Vector2i(1, 1))
 	populate_basic()
 	#populate_double()
 	#populate_with_scale_variation()

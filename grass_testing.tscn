@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://duh5mgp2yc7gh"]
+
+[ext_resource type="Shader" path="res://grass.gdshader" id="1_1c54x"]
+[ext_resource type="Texture2D" uid="uid://xvj47hrk78ot" path="res://at_grass/grass_testures/PNG/Flat/sprite_0006.png" id="2_w3k0x"]
+[ext_resource type="Script" path="res://grass_testing.gd" id="3_2ygw2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tpwr5"]
+shader = ExtResource("1_1c54x")
+shader_parameter/grass_size = null
+shader_parameter/world_size = null
+shader_parameter/wind_directon = null
+shader_parameter/wind_speed = null
+shader_parameter/horizontal_strength = null
+shader_parameter/vertical_strength = null
+shader_parameter/grass_gradient = null
+shader_parameter/color_bend = null
+
+[sub_resource type="QuadMesh" id="QuadMesh_pieoo"]
+
+[sub_resource type="MultiMesh" id="MultiMesh_4c4a4"]
+instance_count = 100
+mesh = SubResource("QuadMesh_pieoo")
+buffer = PackedFloat32Array(1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2, 1, 0, 0, 1, 0, 1, 0, 2)
+
+[node name="GrassTesting" type="MultiMeshInstance2D"]
+material = SubResource("ShaderMaterial_tpwr5")
+multimesh = SubResource("MultiMesh_4c4a4")
+texture = ExtResource("2_w3k0x")
+script = ExtResource("3_2ygw2")
