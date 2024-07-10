@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bgds1447ghgxu"]
+
+[ext_resource type="Shader" path="res://grass.gdshader" id="1_acxfy"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_04307"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_l471t"]
+noise = SubResource("FastNoiseLite_04307")
+
+[resource]
+shader = ExtResource("1_acxfy")
+shader_parameter/a = 0.0
+shader_parameter/b = 100.0
+shader_parameter/c = null
+shader_parameter/world_size = 16.745
+shader_parameter/wind_vector = Vector2(1, 0)
+shader_parameter/horizontal_strength = 0.7
+shader_parameter/vertical_strength = 0.5
+shader_parameter/wind_noise_map = SubResource("NoiseTexture2D_l471t")
