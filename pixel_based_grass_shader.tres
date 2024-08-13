@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://daogsf34ea4sc"]
+
+[ext_resource type="Shader" path="res://pixel_based_grass_shader.gdshader" id="1_5ta3o"]
+[ext_resource type="Texture2D" uid="uid://c2rq1ip2i7ehe" path="res://marble_noise.tres" id="2_kpbl0"]
+
+[resource]
+shader = ExtResource("1_5ta3o")
+shader_parameter/a = -1.14
+shader_parameter/b = 0.36
+shader_parameter/c = 0.915
+shader_parameter/d = 0.0
+shader_parameter/wind_vector = Vector2(1, 0)
+shader_parameter/wind_speed = 100.0
+shader_parameter/noise_map_scale = 2.0
+shader_parameter/h_strength = 0.5
+shader_parameter/v_strength = 0.5
+shader_parameter/wind_noise_map = ExtResource("2_kpbl0")

@@ -1,0 +1,14 @@
+[gd_resource type="FastNoiseLite" format=3 uid="uid://c4mbibfn1bp8i"]
+
+[resource]
+noise_type = 5
+seed = 1
+frequency = 0.037
+fractal_type = 3
+fractal_octaves = 1
+fractal_lacunarity = 1.985
+domain_warp_enabled = true
+domain_warp_type = 2
+domain_warp_amplitude = 15.0
+domain_warp_frequency = 0.02
+domain_warp_fractal_octaves = 1
