@@ -8,7 +8,7 @@ extends MultiMeshInstance2D
 @export var width_noise:Noise
 @export var position_noise:Noise
 
-@onready var positions:Array[Vector2i] = tilemap.get_used_cells(0)
+@onready var positions:Array[Vector2i]
 @onready var tile_size:Vector2 = tilemap.tile_set.tile_size 
 
 @export var trigger_ready:bool:
@@ -29,11 +29,30 @@ extends MultiMeshInstance2D
 
 
 func _ready() -> void:
-	positions.append(Vector2i(0, 0))
-	populate_test_rectangle()
+	positions += tilemap.get_used_cells_by_id(0, -1, Vector2i(1,1))
+	#positions += tilemap.get_used_cells_by_id(0, -1, Vector2i(5,1))
+	positions += tilemap.get_used_cells_by_id(0, -1, Vector2i(6,1))
+	#positions += tilemap.get_used_cells_by_id(0, -1, Vector2i(5,0))
+	positions += tilemap.get_used_cells_by_id(0, -1, Vector2i(6,0))
+	#populate_test_rectangle()
+	populate_basic()
 	#populate_double()
 	#populate_with_scale_variation()
 	#populate_with_scale_variation_and_density_multiplier(5)
+
+func populate():
+	multimesh.instance_count = positions.size()
+	
+	for i in positions.size():
+		var grass_bunch_transform:Transform2D
+		grass_bunch_transform = grass_bunch_transform \
+			.translated(
+				(Vector2(positions[i]) + Vector2(.5,.5)) *
+				tile_size.x
+			)\
+			.rotated_local(PI)\
+			.scaled_local(tile_size)
+		multimesh.set_instance_transform_2d(i, grass_bunch_transform)
 
 func populate_test_rectangle(size:Vector2i = Vector2i(50, 50)):
 	positions.clear()
