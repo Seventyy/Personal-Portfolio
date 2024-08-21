@@ -21,7 +21,6 @@ extends MultiMeshInstance2D
 		
 		var grass_bunch_transform:Transform2D
 		grass_bunch_transform = grass_bunch_transform \
-			.translated(Vector2.ONE * .5) \
 			.rotated_local(PI) \
 			.scaled_local(Vector2.ONE * 32)
 		multimesh.set_instance_transform_2d(0, grass_bunch_transform)

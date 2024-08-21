@@ -29,6 +29,9 @@ void vertex() {
 		mod(MODEL_MATRIX[3].xy - wind_vector * wind_speed * TIME, noise_map_size * noise_map_scale)/(noise_map_size* noise_map_scale)
 	).r;
 	VERTEX.x = VERTEX.x + (1. - UV.y) * -pow((1. - UV.y),2.) * -h_strength * (gust - 0.5) * 2.;
-	VERTEX.y = VERTEX.y * -((1. - UV.y) * v_strength * abs((gust - 0.5) * 2.));
+	//VERTEX.y = (1. - UV.y) * v_strength * abs((gust - 0.5) * 2.);
+	//VERTEX.y = (VERTEX.y + b) * a - (a * b);
+	VERTEX.y = -(UV.y - 1.) * (-4. * v_strength * pow(gust - .5, 2) + 1.) - .5;
+	//VERTEX.y *= 
 }
 
